@@ -3,13 +3,15 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i5;
-import 'dart:convert' as _i6;
-import 'dart:typed_data' as _i7;
+import 'dart:async' as _i7;
+import 'dart:convert' as _i8;
+import 'dart:typed_data' as _i9;
 
-import 'package:http/http.dart' as _i2;
-import 'package:instabug_http_client/instabug_http_client.dart' as _i4;
-import 'package:instabug_http_client/instabug_http_logger.dart' as _i3;
+import 'package:http/http.dart' as _i4;
+import 'package:instabug_flutter/instabug_flutter.dart' as _i3;
+import 'package:instabug_http_client/src/instabug_http_client.dart' as _i6;
+import 'package:instabug_http_client/src/instabug_http_log_filter.dart' as _i2;
+import 'package:instabug_http_client/src/instabug_http_logger.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -23,8 +25,9 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeClient_0 extends _i1.SmartFake implements _i2.Client {
-  _FakeClient_0(
+class _FakeInstabugHttpLogFilter_0 extends _i1.SmartFake
+    implements _i2.InstabugHttpLogFilter {
+  _FakeInstabugHttpLogFilter_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -33,9 +36,8 @@ class _FakeClient_0 extends _i1.SmartFake implements _i2.Client {
         );
 }
 
-class _FakeInstabugHttpLogger_1 extends _i1.SmartFake
-    implements _i3.InstabugHttpLogger {
-  _FakeInstabugHttpLogger_1(
+class _FakeNetworkLogger_1 extends _i1.SmartFake implements _i3.NetworkLogger {
+  _FakeNetworkLogger_1(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -44,8 +46,8 @@ class _FakeInstabugHttpLogger_1 extends _i1.SmartFake
         );
 }
 
-class _FakeResponse_2 extends _i1.SmartFake implements _i2.Response {
-  _FakeResponse_2(
+class _FakeClient_2 extends _i1.SmartFake implements _i4.Client {
+  _FakeClient_2(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -54,9 +56,30 @@ class _FakeResponse_2 extends _i1.SmartFake implements _i2.Response {
         );
 }
 
-class _FakeStreamedResponse_3 extends _i1.SmartFake
-    implements _i2.StreamedResponse {
-  _FakeStreamedResponse_3(
+class _FakeInstabugHttpLogger_3 extends _i1.SmartFake
+    implements _i5.InstabugHttpLogger {
+  _FakeInstabugHttpLogger_3(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeResponse_4 extends _i1.SmartFake implements _i4.Response {
+  _FakeResponse_4(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeStreamedResponse_5 extends _i1.SmartFake
+    implements _i4.StreamedResponse {
+  _FakeStreamedResponse_5(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -69,15 +92,39 @@ class _FakeStreamedResponse_3 extends _i1.SmartFake
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockInstabugHttpLogger extends _i1.Mock
-    implements _i3.InstabugHttpLogger {
+    implements _i5.InstabugHttpLogger {
   MockInstabugHttpLogger() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
+  _i2.InstabugHttpLogFilter get logFilter => (super.noSuchMethod(
+        Invocation.getter(#logFilter),
+        returnValue: _FakeInstabugHttpLogFilter_0(
+          this,
+          Invocation.getter(#logFilter),
+        ),
+      ) as _i2.InstabugHttpLogFilter);
+  @override
+  _i3.NetworkLogger get networkLogger => (super.noSuchMethod(
+        Invocation.getter(#networkLogger),
+        returnValue: _FakeNetworkLogger_1(
+          this,
+          Invocation.getter(#networkLogger),
+        ),
+      ) as _i3.NetworkLogger);
+  @override
+  set networkLogger(_i3.NetworkLogger? _networkLogger) => super.noSuchMethod(
+        Invocation.setter(
+          #networkLogger,
+          _networkLogger,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   void onLogger(
-    _i2.Response? response, {
-    DateTime? startTime,
+    _i4.Response? response, {
+    required DateTime? startTime,
   }) =>
       super.noSuchMethod(
         Invocation.method(
@@ -93,32 +140,56 @@ class MockInstabugHttpLogger extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockInstabugHttpClient extends _i1.Mock
-    implements _i4.InstabugHttpClient {
+    implements _i6.InstabugHttpClient {
   MockInstabugHttpClient() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.Client get client => (super.noSuchMethod(
+  _i4.Client get client => (super.noSuchMethod(
         Invocation.getter(#client),
-        returnValue: _FakeClient_0(
+        returnValue: _FakeClient_2(
           this,
           Invocation.getter(#client),
         ),
-      ) as _i2.Client);
+      ) as _i4.Client);
   @override
-  _i3.InstabugHttpLogger get logger => (super.noSuchMethod(
+  _i5.InstabugHttpLogger get logger => (super.noSuchMethod(
         Invocation.getter(#logger),
-        returnValue: _FakeInstabugHttpLogger_1(
+        returnValue: _FakeInstabugHttpLogger_3(
           this,
           Invocation.getter(#logger),
         ),
-      ) as _i3.InstabugHttpLogger);
+      ) as _i5.InstabugHttpLogger);
   @override
-  set logger(_i3.InstabugHttpLogger? _logger) => super.noSuchMethod(
+  set logger(_i5.InstabugHttpLogger? _logger) => super.noSuchMethod(
         Invocation.setter(
           #logger,
           _logger,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  _i2.InstabugHttpLogFilter get logFilter => (super.noSuchMethod(
+        Invocation.getter(#logFilter),
+        returnValue: _FakeInstabugHttpLogFilter_0(
+          this,
+          Invocation.getter(#logFilter),
+        ),
+      ) as _i2.InstabugHttpLogFilter);
+  @override
+  _i3.NetworkLogger get networkLogger => (super.noSuchMethod(
+        Invocation.getter(#networkLogger),
+        returnValue: _FakeNetworkLogger_1(
+          this,
+          Invocation.getter(#networkLogger),
+        ),
+      ) as _i3.NetworkLogger);
+  @override
+  set networkLogger(_i3.NetworkLogger? _networkLogger) => super.noSuchMethod(
+        Invocation.setter(
+          #networkLogger,
+          _networkLogger,
         ),
         returnValueForMissingStub: null,
       );
@@ -131,11 +202,11 @@ class MockInstabugHttpClient extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  _i5.Future<_i2.Response> delete(
+  _i7.Future<_i4.Response> delete(
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i6.Encoding? encoding,
+    _i8.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -147,7 +218,7 @@ class MockInstabugHttpClient extends _i1.Mock
             #encoding: encoding,
           },
         ),
-        returnValue: _i5.Future<_i2.Response>.value(_FakeResponse_2(
+        returnValue: _i7.Future<_i4.Response>.value(_FakeResponse_4(
           this,
           Invocation.method(
             #delete,
@@ -159,9 +230,9 @@ class MockInstabugHttpClient extends _i1.Mock
             },
           ),
         )),
-      ) as _i5.Future<_i2.Response>);
+      ) as _i7.Future<_i4.Response>);
   @override
-  _i5.Future<_i2.Response> get(
+  _i7.Future<_i4.Response> get(
     Uri? url, {
     Map<String, String>? headers,
   }) =>
@@ -171,7 +242,7 @@ class MockInstabugHttpClient extends _i1.Mock
           [url],
           {#headers: headers},
         ),
-        returnValue: _i5.Future<_i2.Response>.value(_FakeResponse_2(
+        returnValue: _i7.Future<_i4.Response>.value(_FakeResponse_4(
           this,
           Invocation.method(
             #get,
@@ -179,9 +250,9 @@ class MockInstabugHttpClient extends _i1.Mock
             {#headers: headers},
           ),
         )),
-      ) as _i5.Future<_i2.Response>);
+      ) as _i7.Future<_i4.Response>);
   @override
-  _i5.Future<_i2.Response> head(
+  _i7.Future<_i4.Response> head(
     Uri? url, {
     Map<String, String>? headers,
   }) =>
@@ -191,7 +262,7 @@ class MockInstabugHttpClient extends _i1.Mock
           [url],
           {#headers: headers},
         ),
-        returnValue: _i5.Future<_i2.Response>.value(_FakeResponse_2(
+        returnValue: _i7.Future<_i4.Response>.value(_FakeResponse_4(
           this,
           Invocation.method(
             #head,
@@ -199,13 +270,13 @@ class MockInstabugHttpClient extends _i1.Mock
             {#headers: headers},
           ),
         )),
-      ) as _i5.Future<_i2.Response>);
+      ) as _i7.Future<_i4.Response>);
   @override
-  _i5.Future<_i2.Response> patch(
+  _i7.Future<_i4.Response> patch(
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i6.Encoding? encoding,
+    _i8.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -217,7 +288,7 @@ class MockInstabugHttpClient extends _i1.Mock
             #encoding: encoding,
           },
         ),
-        returnValue: _i5.Future<_i2.Response>.value(_FakeResponse_2(
+        returnValue: _i7.Future<_i4.Response>.value(_FakeResponse_4(
           this,
           Invocation.method(
             #patch,
@@ -229,13 +300,13 @@ class MockInstabugHttpClient extends _i1.Mock
             },
           ),
         )),
-      ) as _i5.Future<_i2.Response>);
+      ) as _i7.Future<_i4.Response>);
   @override
-  _i5.Future<_i2.Response> post(
+  _i7.Future<_i4.Response> post(
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i6.Encoding? encoding,
+    _i8.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -247,7 +318,7 @@ class MockInstabugHttpClient extends _i1.Mock
             #encoding: encoding,
           },
         ),
-        returnValue: _i5.Future<_i2.Response>.value(_FakeResponse_2(
+        returnValue: _i7.Future<_i4.Response>.value(_FakeResponse_4(
           this,
           Invocation.method(
             #post,
@@ -259,13 +330,13 @@ class MockInstabugHttpClient extends _i1.Mock
             },
           ),
         )),
-      ) as _i5.Future<_i2.Response>);
+      ) as _i7.Future<_i4.Response>);
   @override
-  _i5.Future<_i2.Response> put(
+  _i7.Future<_i4.Response> put(
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i6.Encoding? encoding,
+    _i8.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -277,7 +348,7 @@ class MockInstabugHttpClient extends _i1.Mock
             #encoding: encoding,
           },
         ),
-        returnValue: _i5.Future<_i2.Response>.value(_FakeResponse_2(
+        returnValue: _i7.Future<_i4.Response>.value(_FakeResponse_4(
           this,
           Invocation.method(
             #put,
@@ -289,9 +360,9 @@ class MockInstabugHttpClient extends _i1.Mock
             },
           ),
         )),
-      ) as _i5.Future<_i2.Response>);
+      ) as _i7.Future<_i4.Response>);
   @override
-  _i5.Future<String> read(
+  _i7.Future<String> read(
     Uri? url, {
     Map<String, String>? headers,
   }) =>
@@ -301,10 +372,10 @@ class MockInstabugHttpClient extends _i1.Mock
           [url],
           {#headers: headers},
         ),
-        returnValue: _i5.Future<String>.value(''),
-      ) as _i5.Future<String>);
+        returnValue: _i7.Future<String>.value(''),
+      ) as _i7.Future<String>);
   @override
-  _i5.Future<_i7.Uint8List> readBytes(
+  _i7.Future<_i9.Uint8List> readBytes(
     Uri? url, {
     Map<String, String>? headers,
   }) =>
@@ -314,28 +385,28 @@ class MockInstabugHttpClient extends _i1.Mock
           [url],
           {#headers: headers},
         ),
-        returnValue: _i5.Future<_i7.Uint8List>.value(_i7.Uint8List(0)),
-      ) as _i5.Future<_i7.Uint8List>);
+        returnValue: _i7.Future<_i9.Uint8List>.value(_i9.Uint8List(0)),
+      ) as _i7.Future<_i9.Uint8List>);
   @override
-  _i5.Future<_i2.StreamedResponse> send(_i2.BaseRequest? request) =>
+  _i7.Future<_i4.StreamedResponse> send(_i4.BaseRequest? request) =>
       (super.noSuchMethod(
         Invocation.method(
           #send,
           [request],
         ),
         returnValue:
-            _i5.Future<_i2.StreamedResponse>.value(_FakeStreamedResponse_3(
+            _i7.Future<_i4.StreamedResponse>.value(_FakeStreamedResponse_5(
           this,
           Invocation.method(
             #send,
             [request],
           ),
         )),
-      ) as _i5.Future<_i2.StreamedResponse>);
+      ) as _i7.Future<_i4.StreamedResponse>);
   @override
   void onLogger(
-    _i2.Response? response, {
-    DateTime? startTime,
+    _i4.Response? response, {
+    required DateTime? startTime,
   }) =>
       super.noSuchMethod(
         Invocation.method(
@@ -345,4 +416,19 @@ class MockInstabugHttpClient extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+}
+
+/// A class which mocks [NetworkLogger].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockNetworkLogger extends _i1.Mock implements _i3.NetworkLogger {
+  @override
+  _i7.Future<void> networkLog(_i3.NetworkData? data) => (super.noSuchMethod(
+        Invocation.method(
+          #networkLog,
+          [data],
+        ),
+        returnValue: _i7.Future<void>.value(),
+        returnValueForMissingStub: _i7.Future<void>.value(),
+      ) as _i7.Future<void>);
 }
