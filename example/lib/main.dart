@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instabug_http_client/instabug_http_client.dart';
 import 'package:instabug_flutter/instabug_flutter.dart';
+import 'package:instabug_http_client/instabug_http_client.dart';
 
 Future<void> main() async {
   runApp(const MyApp());
