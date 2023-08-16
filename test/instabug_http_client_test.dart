@@ -14,6 +14,7 @@ import 'package:mockito/mockito.dart';
 
 import 'instabug_http_client_test.mocks.dart';
 
+// ignore: always_specify_types
 @GenerateMocks([
   InstabugHttpLogger,
   InstabugHttpClient,

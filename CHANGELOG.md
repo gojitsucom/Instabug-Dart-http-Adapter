@@ -1,3 +1,6 @@
+## [3.0.0-dart3]
+- Update to Dart 3
+
 ## [2.3.0] - 3/11/2022
 
 - Adds support for MultipartRequest.
