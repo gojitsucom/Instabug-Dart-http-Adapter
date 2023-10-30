@@ -1,3 +1,6 @@
+## [3.0.0]
+- Upgrade to latest Instabug
+
 ## [2.4.0]
 
 - Enables InstabugHttpClient to wrap internal client
