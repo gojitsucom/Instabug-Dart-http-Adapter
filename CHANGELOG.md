@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Enables `InstabugHttpClient` to wrap an internal `http` client.
+- Adds a filter capability for http logging
 
 ## [2.4.0] - 7/05/2024
 
