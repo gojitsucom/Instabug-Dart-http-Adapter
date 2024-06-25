@@ -14,7 +14,9 @@ class InstabugHttpClient extends InstabugHttpLogger implements http.Client {
   InstabugHttpClient({http.Client? client, super.logFilter}) : client = client ?? http.Client() {
     logger = this;
   }
-  final http.Client client;
+
+  @visibleForTesting
+  http.Client client;
 
   @visibleForTesting
   late InstabugHttpLogger logger;
