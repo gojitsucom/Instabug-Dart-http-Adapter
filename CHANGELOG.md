@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.3.0]
+
+- Update `instabug_flutter` version to 15.0.2
+
 ## Unreleased
 
 - Enables `InstabugHttpClient` to wrap an internal `http` client.
