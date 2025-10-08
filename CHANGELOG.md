@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.4.0] - 10/8/2025
+
+- Update `instabug_flutter` version to 16.0.2
+
 ## [3.3.0]
 
 - Update `instabug_flutter` version to 15.0.2
