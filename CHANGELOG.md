@@ -2,7 +2,7 @@
 
 ## [3.4.0] - 10/8/2025
 
-- Update `instabug_flutter` version to 16.0.2
+- Update `instabug_flutter` version to 16.0.3
 
 ## [3.3.0]
 
