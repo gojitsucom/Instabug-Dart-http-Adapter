@@ -12,7 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^1.2.1
-#  instabug_flutter: '>=14.0.0 <16.0.0'
   luciq_flutter: ^18.0.0
   meta: ^1.10.0
 

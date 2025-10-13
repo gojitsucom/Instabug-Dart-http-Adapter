@@ -3,7 +3,7 @@
 ## [3.0.0] (2025-10-12)
 
 ### Added
-- Uses `luciq_flutter` and migrates `InstabugHttpClient` to `LuciqHttpClient`, `InstabugHttpLogger` to `LuciqHttpLogger`, and `InstabugHttpLogger` to `LuciqHttpLogger`.
+- Uses `luciq_flutter` and migrates `InstabugHttpClient` to `LuciqHttpClient` and `InstabugHttpLogger` to `LuciqHttpLogger`.
 
 ## [2.6.0] (2025-07-17)
 
