@@ -49,107 +49,107 @@ Future<void> main() async {
   });
 
   LuciqHttpClient buildClient({http.Client? mockClient}) {
-    final LuciqHttpClient instabugHttpClient =
+    final LuciqHttpClient luciqHttpClient =
         LuciqHttpClient(client: mockClient ?? MockLuciqHttpClient());
-    instabugHttpClient.logger = MockLuciqHttpLogger();
+    luciqHttpClient.logger = MockLuciqHttpLogger();
 
-    return instabugHttpClient;
+    return luciqHttpClient;
   }
 
   test('expect instabug http client GET to return response', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
-    when<dynamic>(instabugHttpClient.client.get(url, headers: anyNamed('headers')))
+    final LuciqHttpClient luciqHttpClient = buildClient();
+    when<dynamic>(luciqHttpClient.client.get(url, headers: anyNamed('headers')))
         .thenAnswer((_) async => mockedResponse);
-    final http.Response result = await instabugHttpClient.get(url);
+    final http.Response result = await luciqHttpClient.get(url);
     expect(result, isInstanceOf<http.Response>());
     expect(result, mockedResponse);
-    verify(instabugHttpClient.logger
+    verify(luciqHttpClient.logger
             .onLogger(mockedResponse, startTime: anyNamed('startTime')))
         .called(1);
   });
 
   test('expect instabug http client HEAD to return response', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
-    when<dynamic>(instabugHttpClient.client.head(url, headers: anyNamed('headers')))
+    final LuciqHttpClient luciqHttpClient = buildClient();
+    when<dynamic>(luciqHttpClient.client.head(url, headers: anyNamed('headers')))
         .thenAnswer((_) async => mockedResponse);
-    final http.Response result = await instabugHttpClient.head(url);
+    final http.Response result = await luciqHttpClient.head(url);
     expect(result, isInstanceOf<http.Response>());
     expect(result, mockedResponse);
-    verify(instabugHttpClient.logger
+    verify(luciqHttpClient.logger
             .onLogger(mockedResponse, startTime: anyNamed('startTime')))
         .called(1);
   });
 
   test('expect instabug http client DELETE to return response', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
-    when<dynamic>(instabugHttpClient.client.delete(url, headers: anyNamed('headers'), body: anyNamed('body'), encoding: anyNamed('encoding')))
+    final LuciqHttpClient luciqHttpClient = buildClient();
+    when<dynamic>(luciqHttpClient.client.delete(url, headers: anyNamed('headers'), body: anyNamed('body'), encoding: anyNamed('encoding')))
         .thenAnswer((_) async => mockedResponse);
-    final http.Response result = await instabugHttpClient.delete(url);
+    final http.Response result = await luciqHttpClient.delete(url);
     expect(result, isInstanceOf<http.Response>());
     expect(result, mockedResponse);
-    verify(instabugHttpClient.logger
+    verify(luciqHttpClient.logger
             .onLogger(mockedResponse, startTime: anyNamed('startTime')))
         .called(1);
   });
 
   test('expect instabug http client PATCH to return response', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
-    when<dynamic>(instabugHttpClient.client.patch(url, headers: anyNamed('headers'), body: anyNamed('body'), encoding: anyNamed('encoding')))
+    final LuciqHttpClient luciqHttpClient = buildClient();
+    when<dynamic>(luciqHttpClient.client.patch(url, headers: anyNamed('headers'), body: anyNamed('body'), encoding: anyNamed('encoding')))
         .thenAnswer((_) async => mockedResponse);
-    final http.Response result = await instabugHttpClient.patch(url);
+    final http.Response result = await luciqHttpClient.patch(url);
     expect(result, isInstanceOf<http.Response>());
     expect(result, mockedResponse);
-    verify(instabugHttpClient.logger
+    verify(luciqHttpClient.logger
             .onLogger(mockedResponse, startTime: anyNamed('startTime')))
         .called(1);
   });
 
   test('expect instabug http client POST to return response', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
-    when<dynamic>(instabugHttpClient.client.post(url, headers: anyNamed('headers'), body: anyNamed('body'), encoding: anyNamed('encoding')))
+    final LuciqHttpClient luciqHttpClient = buildClient();
+    when<dynamic>(luciqHttpClient.client.post(url, headers: anyNamed('headers'), body: anyNamed('body'), encoding: anyNamed('encoding')))
         .thenAnswer((_) async => mockedResponse);
-    final http.Response result = await instabugHttpClient.post(url);
+    final http.Response result = await luciqHttpClient.post(url);
     expect(result, isInstanceOf<http.Response>());
     expect(result, mockedResponse);
-    verify(instabugHttpClient.logger
+    verify(luciqHttpClient.logger
             .onLogger(mockedResponse, startTime: anyNamed('startTime')))
         .called(1);
   });
 
   test('expect instabug http client PUT to return response', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
-    when<dynamic>(instabugHttpClient.client.put(url, headers: anyNamed('headers'), body: anyNamed('body'), encoding: anyNamed('encoding')))
+    final LuciqHttpClient luciqHttpClient = buildClient();
+    when<dynamic>(luciqHttpClient.client.put(url, headers: anyNamed('headers'), body: anyNamed('body'), encoding: anyNamed('encoding')))
         .thenAnswer((_) async => mockedResponse);
-    final http.Response result = await instabugHttpClient.put(url);
+    final http.Response result = await luciqHttpClient.put(url);
     expect(result, isInstanceOf<http.Response>());
     expect(result.body, mockedResponse.body);
-    verify(instabugHttpClient.logger
+    verify(luciqHttpClient.logger
             .onLogger(mockedResponse, startTime: anyNamed('startTime')))
         .called(1);
   });
 
   test('expect instabug http client READ to return response', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
+    final LuciqHttpClient luciqHttpClient = buildClient();
     const String response = 'Some response string';
-    when<dynamic>(instabugHttpClient.client.read(url,headers: anyNamed('headers')))
+    when<dynamic>(luciqHttpClient.client.read(url,headers: anyNamed('headers')))
         .thenAnswer((_) async => response);
 
-    final String result = await instabugHttpClient.read(url);
+    final String result = await luciqHttpClient.read(url);
     expect(result, isInstanceOf<String>());
     expect(result, response);
   });
 
   test('expect instabug http client READBYTES to return response', () async {
     final Uint8List response = Uint8List(3);
-    final LuciqHttpClient instabugHttpClient = buildClient(mockClient: MockClient((_) async => http.Response.bytes(response, 200)));
+    final LuciqHttpClient luciqHttpClient = buildClient(mockClient: MockClient((_) async => http.Response.bytes(response, 200)));
 
-    final Uint8List result = await instabugHttpClient.readBytes(url);
+    final Uint8List result = await luciqHttpClient.readBytes(url);
     expect(result, isInstanceOf<Uint8List>());
     expect(result, response);
   });
 
   test('expect instabug http client SEND to return response', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
+    final LuciqHttpClient luciqHttpClient = buildClient();
     final http.StreamedResponse response = http.StreamedResponse(
         const Stream<List<int>>.empty(), 200,
         contentLength: 0);
@@ -157,10 +157,10 @@ Future<void> main() async {
       ..headers[HttpHeaders.contentTypeHeader] =
           'application/json; charset=utf-8'
       ..headers[HttpHeaders.userAgentHeader] = 'Dart';
-    when<dynamic>(instabugHttpClient.client.send(request))
+    when<dynamic>(luciqHttpClient.client.send(request))
         .thenAnswer((_) async => response);
     final Future<http.StreamedResponse> responseFuture =
-        instabugHttpClient.send(request);
+        luciqHttpClient.send(request);
     request
       ..sink.add('{"hello": "world"}'.codeUnits)
       ..sink.close();
@@ -177,25 +177,25 @@ Future<void> main() async {
     expect(await result.stream.bytesToString(),
         await response.stream.bytesToString());
     final MockLuciqHttpLogger logger =
-        instabugHttpClient.logger as MockLuciqHttpLogger;
+        luciqHttpClient.logger as MockLuciqHttpLogger;
     verify(logger.onLogger(any, startTime: anyNamed('startTime'))).called(1);
   });
 
   test('expect instabug http client CLOSE to be called', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
-    instabugHttpClient.close();
+    final LuciqHttpClient luciqHttpClient = buildClient();
+    luciqHttpClient.close();
 
-    verify(instabugHttpClient.client.close());
+    verify(luciqHttpClient.client.close());
   });
 
   test('stress test for GET method', () async {
-    final LuciqHttpClient instabugHttpClient = buildClient();
-    when<dynamic>(instabugHttpClient.client.get(url, headers: anyNamed('headers')))
+    final LuciqHttpClient luciqHttpClient = buildClient();
+    when<dynamic>(luciqHttpClient.client.get(url, headers: anyNamed('headers')))
         .thenAnswer((_) async => mockedResponse);
     for (int i = 0; i < 10000; i++) {
-      await instabugHttpClient.get(url);
+      await luciqHttpClient.get(url);
     }
-    verify(instabugHttpClient.logger
+    verify(luciqHttpClient.logger
             .onLogger(mockedResponse, startTime: anyNamed('startTime')))
         .called(10000);
   });
