@@ -1,10 +1,10 @@
-# instabug_http_client
+# luciq_http_client
 
-A dart package to support Instabug network logging for the external dart [http](https://pub.dev/packages/http) package.
+A dart package to support Luciq network logging for the external dart [http](https://pub.dev/packages/http) package.
 
 ## Getting Started
 
-You can choose to attach all your network requests data to the Instabug reports being sent to the dashboard. See the details below on how to enable the feature for the `http` package.
+You can choose to attach all your network requests data to the Luciq reports being sent to the dashboard. See the details below on how to enable the feature for the `http` package.
 
 ### Installation
 
@@ -12,7 +12,7 @@ You can choose to attach all your network requests data to the Instabug reports 
 
 ```yaml
 dependencies:
-  instabug_http_client:
+  luciq_http_client:
 ```
 
 2. Install the package by running the following command.
@@ -23,10 +23,10 @@ flutter packages get
 
 ### Usage
 
-To enable logging, use the custom http client provided by Instabug:
+To enable logging, use the custom http client provided by Luciq:
 
 ```dart
-final client = InstabugHttpClient();
+final client = LuciqHttpClient();
 ```
 
 Then proceed to use the package normally:

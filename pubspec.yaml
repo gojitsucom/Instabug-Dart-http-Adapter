@@ -3,7 +3,9 @@ description:
   This package is an add on to instabug_flutter. It intercepts any requests performed
   with http Package and sends them to the report that will be sent to the dashboard.
 version: 3.0.0
-homepage: https://github.com/Instabug/Instabug-Flutter#readme
+publish_to: http://nexus.gojitsu.com:7777
+homepage: https://github.com/gojitsucom/Instabug-Dart-http-Adapter.git
+axlehire_project_type: package
 
 environment:
   sdk: '>=3.8.0 <4.0.0'
