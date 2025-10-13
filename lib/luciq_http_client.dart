@@ -1,6 +1,6 @@
 // ignore_for_file: invalid_use_of_internal_member
 
-library instabug_http_client;
+library luciq_http_client;
 
 import 'dart:convert';
 
@@ -9,12 +9,13 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
-import 'package:instabug_flutter/instabug_flutter.dart';
-import 'package:instabug_http_client/instabug_http_logger.dart';
+import 'package:luciq_flutter/luciq_flutter.dart';
 import 'package:meta/meta.dart';
 
-class InstabugHttpClient extends InstabugHttpLogger implements http.Client {
-  InstabugHttpClient() : client = http.Client() {
+import 'luciq_http_logger.dart';
+
+class LuciqHttpClient extends LuciqHttpLogger implements http.Client {
+  LuciqHttpClient() : client = http.Client(), super() {
     logger = this;
   }
 
@@ -23,7 +24,7 @@ class InstabugHttpClient extends InstabugHttpLogger implements http.Client {
   http.Client client;
 
   @visibleForTesting
-  late InstabugHttpLogger logger;
+  late LuciqHttpLogger logger;
 
   @override
   void close() => client.close();
