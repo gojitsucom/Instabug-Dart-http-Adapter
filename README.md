@@ -26,7 +26,7 @@ flutter packages get
 To enable logging, use the custom http client provided by Instabug:
 
 ```dart
-final client = InstabugHttpClient();
+final client = LuciqHttpClient();
 ```
 
 Then proceed to use the package normally:
