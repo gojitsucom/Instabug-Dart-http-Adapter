@@ -2,7 +2,7 @@ name: luciq_http_client
 description:
   This package is an add on to luciq_flutter. It intercepts any requests performed
   with http Package and sends them to the report that will be sent to the dashboard.
-version: 3.5.0
+version: 4.0.0
 homepage: https://github.com/Instabug/Instabug-Flutter#readme
 publish_to: http://nexus.gojitsu.com:7777
 

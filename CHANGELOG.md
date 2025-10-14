@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.5.0] - 10/13/2025
+## [4.0.0] - 10/13/2025
 
 - Merge new changes from upstream/master
 - Migrate to `luciq_flutter`
