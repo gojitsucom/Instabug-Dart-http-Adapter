@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:instabug_flutter/instabug_flutter.dart';
+import 'package:luciq_flutter/luciq_flutter.dart';
 
-class InstabugHttpLogger {
+class LuciqHttpLogger {
   void onLogger(http.Response response, {DateTime? startTime,W3CHeader? w3CHeader}) {
     final NetworkLogger networkLogger = NetworkLogger();
 

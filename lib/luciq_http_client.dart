@@ -1,6 +1,6 @@
 // ignore_for_file: invalid_use_of_internal_member
 
-library instabug_http_client;
+library luciq_http_client;
 
 import 'dart:convert';
 
@@ -9,17 +9,17 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
-import 'package:instabug_flutter/instabug_flutter.dart';
-import 'package:instabug_http_client/instabug_http_logger.dart';
+import 'package:luciq_flutter/luciq_flutter.dart';
+import 'package:luciq_http_client/luciq_http_logger.dart';
 import 'package:meta/meta.dart';
 
-class InstabugHttpClient extends InstabugHttpLogger implements http.Client {
-  /// Constructs a new [InstabugHttpClient].
+class LuciqHttpClient extends LuciqHttpLogger implements http.Client {
+  /// Constructs a new [LuciqHttpClient].
   ///
   /// Provide a value for [client] in order to override the internal client used
   /// by this class. This can be useful if you are working with other libraries
   /// that require other custom client implementations
-  InstabugHttpClient({http.Client? client}) : client = client ?? http.Client() {
+  LuciqHttpClient({http.Client? client}) : client = client ?? http.Client() {
     logger = this;
   }
 
@@ -29,7 +29,7 @@ class InstabugHttpClient extends InstabugHttpLogger implements http.Client {
   final NetworkLogger _networklogger = NetworkLogger();
 
   @visibleForTesting
-  late InstabugHttpLogger logger;
+  late LuciqHttpLogger logger;
 
   @override
   void close() => client.close();

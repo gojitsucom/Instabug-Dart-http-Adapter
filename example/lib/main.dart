@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:instabug_http_client/instabug_http_client.dart';
-import 'package:instabug_flutter/instabug_flutter.dart';
+import 'package:luciq_http_client/luciq_http_client.dart';
+import 'package:luciq_flutter/luciq_flutter.dart';
 
 Future<void> main() async {
   runApp(const MyApp());
-  Instabug.init(
+  Luciq.init(
      token:  'ed6f659591566da19b67857e1b9d40ab', invocationEvents: [InvocationEvent.floatingButton]);
-  final client = InstabugHttpClient();
+  final client = LuciqHttpClient();
   await client.get(Uri.parse('https://google.com'));
 }
 

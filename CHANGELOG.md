@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.0] - 10/13/2025
+
+- Merge new changes from upstream/master
+- Migrate to `luciq_flutter`
+- Change class to `LuciqHttpClient` and `LuciqHttpLogger`
+- Update tests
+
 ## [3.4.0] - 10/8/2025
 
 - Update `instabug_flutter` version to 16.0.3
@@ -10,7 +17,7 @@
 
 ## Unreleased
 
-- Enables `InstabugHttpClient` to wrap an internal `http` client.
+- Enables `LuciqHttpClient` to wrap an internal `http` client.
 - Add support for `http` v1 ([#20](https://github.com/Instabug/Instabug-Dart-http-Adapter/pull/20)).
 
 ## [2.6.0] (2025-07-17)
