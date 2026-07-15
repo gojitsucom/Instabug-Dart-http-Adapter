@@ -1,5 +1,10 @@
 # Changelog
 
+## [4.1.0] - 7/15/2026
+
+- Widen the `luciq_flutter` constraint to `>=18.0.0 <20.0.0` to support the Luciq Flutter SDK 19.x line. Preserves the injectable inner-client customization (`LuciqHttpClient({http.Client? client})`). No source changes were required; verified with `flutter analyze` and the existing test suite against `luciq_flutter` 19.8.0.
+- Point `homepage` at this repository.
+
 ## [4.0.0] - 10/13/2025
 
 - Merge new changes from upstream/master
